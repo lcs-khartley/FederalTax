@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         // Get the proper taxPercent as a decimal
         
         var taxPercent = 0.0
-        let taxPercentDecimal = taxPercent / 100
+       // let taxPercentDecimal = taxPercent / 100
         var taxOwingNumber = 0.0
         
         let firstCaseTotal = 7_144.5
@@ -62,30 +62,35 @@ class ViewController: UIViewController {
         switch doubleAnnualIncome {
         case 0...47630:
             taxPercent = 15.0
+            let taxPercentDecimal = taxPercent / 100
             let firstNumber = doubleAnnualIncome * taxPercentDecimal
             taxOwingNumber = firstNumber
             
         case 47631...95259:
             taxPercent = 20.5
             let secondCase = doubleAnnualIncome - 47630
+            let taxPercentDecimal = taxPercent / 100
             let secondNumber = secondCase * taxPercentDecimal
             taxOwingNumber = secondNumber + firstCaseTotal
             
         case 95260...147667:
             taxPercent = 26.0
             let thirdCase = doubleAnnualIncome - 95259
+            let taxPercentDecimal = taxPercent / 100
             let thirdNumber = thirdCase * taxPercentDecimal
             taxOwingNumber = thirdNumber + secondCaseTotal + firstCaseTotal
             
         case 147668...210371:
             taxPercent = 29.0
             let fourthCase = doubleAnnualIncome - 147667
+            let taxPercentDecimal = taxPercent / 100
             let fourthNumber = fourthCase * taxPercentDecimal
             taxOwingNumber = fourthNumber + thirdCaseTotal + secondCaseTotal + firstCaseTotal
             
         default:
             taxPercent = 33.0
             let fifthCase = doubleAnnualIncome - 210371
+            let taxPercentDecimal = taxPercent / 100
             let fifthNumber = fifthCase * taxPercentDecimal
              taxOwingNumber = fifthNumber + fourthCaseTotal + thirdCaseTotal + secondCaseTotal + firstCaseTotal
             
